@@ -7,5 +7,6 @@
  */
 int main(void)
 {
+printf("%s %s", "Hello", "C");
 return (0);
-}	
+}
