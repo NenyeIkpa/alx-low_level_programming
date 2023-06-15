@@ -12,6 +12,6 @@ int main(void)
 {
 char whatToPrint;
 whatToPrint = "with proper grammar, but the outcome is a piece of art,";
-printf("%s\n", whatToPrint );
+printf("%s\n", whatToPrint);
 return (0);
 }
