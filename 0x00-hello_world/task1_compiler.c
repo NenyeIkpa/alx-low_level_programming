@@ -1,6 +1,11 @@
 #include <stdio.h>
-/*main function is point of entry. will print some text */
-void main(void)
+
+/*
+ *main() is entry point
+ *takes no arguments
+ *return type is int
+ */
+int main(void)
 {
-printf("compiling stage");
+return (0);
 }
