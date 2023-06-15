@@ -1,7 +1,7 @@
 #include <stdio.h>
 /*
- *main() is entry point
- *returns int and prints a string
+ *main - Prints "Programming is like building a multilingual puzzle"
+ *Return: returns an int 0
  */
 int main(void)
 {
