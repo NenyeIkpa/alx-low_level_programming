@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CFILE -o task1_compiler.o 
+gcc -c $CFILE -o task1_compiler.o 
