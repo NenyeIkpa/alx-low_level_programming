@@ -1,0 +1,5 @@
+#include <stdio.h>
+void main(void)
+{
+printf("The result from here will be saved into another file.");
+}
