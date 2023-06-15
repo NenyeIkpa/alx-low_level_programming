@@ -2,6 +2,7 @@
 /*
  *main - entry point
  *no arguments
+ *
  *Description: declared a variable whatToPrint
  *of char type that holds a string. Using the
  *prinf function to print out the content of
