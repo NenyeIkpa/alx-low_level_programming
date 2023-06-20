@@ -10,6 +10,6 @@
 
 int main(void)
 {
-	_islower(47);
+	_isalpha(108);
 	return (0);
 }
