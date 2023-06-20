@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * main - entry point
  *
@@ -9,7 +10,6 @@
 
 int main(void)
 {
-	char _putchar(char);
 	char *textToPrint = "_putchar";
 	int z = 0;
 
