@@ -10,6 +10,6 @@
 
 int main(void)
 {
-	print_alphabet_x10();
+	_islower(47);
 	return (0);
 }
