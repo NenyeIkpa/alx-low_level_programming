@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * print_alphabet - function that prints
@@ -20,6 +20,7 @@ void print_alphabet(void)
 	while (letters <= 122)
 	{
 		_putchar(letters);
+		letters++;
 	}
 	_putchar('\n');
 }
