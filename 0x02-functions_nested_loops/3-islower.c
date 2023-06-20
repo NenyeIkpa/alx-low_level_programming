@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _islower - checks whether character is
  * upper or lower case.

@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * _isalpha - checks for alphabets
  *
