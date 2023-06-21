@@ -15,14 +15,14 @@ int print_first_50(void)
 {
 	int first = 1, second = 2;
 	int i;
-	unsigned long int next;
+	long int next;
 
 	printf("%d, %d, ", first, second);
 
 	for (i = 3; i <= 50; i++)
 	{
 		next = first + second;
-		printf("%lu", next);
+		printf("%ld", next);
 		if (i < 50)
 			printf(", ");
 		first = second;
