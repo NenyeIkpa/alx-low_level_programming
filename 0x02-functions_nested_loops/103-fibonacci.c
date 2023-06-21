@@ -15,6 +15,7 @@ int main(void)
 	int previous = 1;
 	int current = 2;
 	int sum = 0;
+	int next;
 
 	while (current <= limit)
 	{
@@ -22,8 +23,7 @@ int main(void)
 		{
 			sum += current;
 		}
-		int next = previous + current;
-
+		next = previous + current;
 		previous = current;
 		current = next;
 	}
