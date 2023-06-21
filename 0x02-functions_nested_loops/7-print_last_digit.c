@@ -19,10 +19,11 @@ int print_last_digit(int x)
 	if(y >= 0)
 	{
 		_putchar('0' + y);
+		return (y);
 	}
 	else
 	{
 		_putchar('0' - y);
+		return(-y);
 	}
-	return (4);
 }
