@@ -12,60 +12,56 @@
 
 void print_times_table(int n)
 {
-	int i, j, result, c, d, e;
+        int i = 0, j, result, c, d, e;
 
-	if (n >= 0 && n <= 15)
-	{
-		for (i = 0; i <= n; i++)
-		{
-			for (j = 0; j <= n; j++)
+       if ( n >= 0 && n <= 15)
+       {
+       	while (i <= n)
+        {
+                j = 0;
+                while (j <= n)
+                {
+                        result = i * j;
+			if (result > 99)
 			{
-				result = i * j;
-				if (j == 0)
-					_putchar('0');
-				else
-				{
-				if (result > 99)
-				{
-					c = result / 100;
-					d = (result - 100) / 10;
-					e = (result - 100)  %  10;
-					_putchar('0' + c);
-                                        _putchar(d + '0');
-                                        _putchar(e + '0');
-				}
-				else
-				{ 
-					c = result / 10;
-					d = result % 10;
-					if ((c != 0 && d != 0) || (c > 0 && d == 0))
-			{
-				_putchar('0' + c);
-				_putchar(d + '0');
+				c = result / 100;
+				d = (result - 100) / 10;
+				e = (result - 100) % 10;
 			}
 			else
 			{
-				if (j == 0)
-				{
-					_putchar(d + '0');
-				}
-				else
-				{
+				c = result / 10;
+                        	d = result % 10;
+				_putchar(' ');
+			}
+                        if ((c != 0 && d != 0) || (c > 0 && d == 0))
+                        {
+                                _putchar('0' + c);
+                                _putchar(d + '0');
+				if (result > 99)
+				_putchar(e + '0');;
+                        }
+                        else
+                        {
+                                if (j == 0)
+                                {
+                                        _putchar(d + '0');
+                                }
+                                else
+                                {
 					_putchar(' ');
-					_putchar(d + '0');
-				}
-			}
-				}
-				if (j != n)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-				j++;
-			}
-			}
-			_putchar('\n');
-			i++;
-		}
-	}
+                                        _putchar(d + '0');
+                                }
+                        }
+                        if (j < n)
+                        {
+                                _putchar(',');
+                                _putchar(' ');
+                        }
+                        j++;
+                }
+                _putchar('\n');
+                i++;
+        }
+       }
 }
