@@ -21,6 +21,6 @@ int main(void)
 			i++;
 		}
 	}
-	printf("%d", sum);
+	printf("%di\n", sum);
 	return (0);
 }
