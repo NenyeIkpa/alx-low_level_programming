@@ -16,7 +16,7 @@ int print_last_digit(int x)
 	int y;
 
 	y = x % 10;
-	if(y >= 0)
+	if (y >= 0)
 	{
 		_putchar('0' + y);
 		return (y);
@@ -24,6 +24,6 @@ int print_last_digit(int x)
 	else
 	{
 		_putchar('0' - y);
-		return(-y);
+		return (-y);
 	}
 }
