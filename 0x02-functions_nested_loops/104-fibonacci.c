@@ -28,6 +28,6 @@ void printFibonacci(int count)
 
 int main(void)
 {
-	printFibonacci(98);
+	printFibonacci(100);
 	return (0);
 }
