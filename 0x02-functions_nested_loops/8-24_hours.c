@@ -10,7 +10,7 @@
 void jack_bauer(void)
 {
 	int m = 0;
-	int n,p,q;
+	int n = 0, p, q;
 
 	while (m < 24)
 	{
@@ -19,7 +19,6 @@ void jack_bauer(void)
 		_putchar('0' + p);
 		_putchar('0' + q);
 		_putchar(':');
-		n = 0;
 		while (n < 60)
 		{
 			p = n / 10;
