@@ -26,8 +26,15 @@ void times_table(void)
 			}
 			else
 			{
-				_putchar(' ');
-				_putchar(d + '0');
+				if (j == 0)
+				{
+					_putchar(d + '0');
+				}
+				else
+				{
+					_putchar(' ');
+					_putchar(d + '0');
+				}
 			}
 			if (j != 9)
 			{
