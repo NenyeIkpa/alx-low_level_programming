@@ -1,21 +1,21 @@
 #include <stdio.h>
 
 /**
- * main - entry point
  * print_first_50 - prints first 50
  * fibonacci numbers
+ * main - entry point
  *
  * Description: calculate and print first
  * 50 fibonnaci numbers
  *
- * Result: type of int
+ * Return: type of int
  */
 
 int print_first_50(void)
 {
 	int first = 1, second = 2;
 	int i;
-	unsigned long int next, total;
+	unsigned long int next;
 
 	printf("%d, %d, ", first, second);
 
