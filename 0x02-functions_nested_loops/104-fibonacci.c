@@ -10,14 +10,14 @@
 
 void printFibonacci(int count)
 {
-	int first = 1, second = 2;
-	int i, next;
+	unsigned long int first = 1, second = 2, next;
+	int i;
 	
-	printf("%d, %d\n", first, second);
+	printf("%lu, %lu, ", first, second);
 	for (i = 3; i <= count; i++)
 	{
 		next = first + second;
-		printf("%d", next);
+		printf("%lu", next);
 		if (i < count)
 		printf(", ");
 		first = second;
