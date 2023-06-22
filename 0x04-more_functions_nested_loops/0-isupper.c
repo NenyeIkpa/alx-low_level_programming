@@ -10,14 +10,8 @@
 
 int _isupper(int c)
 {
-	char input;
-
-	for (input = 'A'; input <= 'Z'; input++)
-	{
-		if (c == input)
-		{
-			return (1);
-		}
-	}
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
 }
