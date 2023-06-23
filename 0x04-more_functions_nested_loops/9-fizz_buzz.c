@@ -8,13 +8,13 @@
 
 void print_fizz(void)
 {
-	int j = 0;
+	int k = 0;
 	char fizz[4] = "Fizz";
 
-	while (fizz[j] != '\0')
+	while (fizz[k] != '\0')
 	{
-		printf("%c", fizz[j]);
-		j++;
+	       	printf("%c", fizz[k]);
+	       	k++;
 	}
 }
 
@@ -30,7 +30,7 @@ void print_buzz(void)
 	char buzz[4] = "Buzz";
 
 	while (buzz[k] != '\0')
-	{
+	{ 
 		printf("%c", buzz[k]);
 		k++;
 	}
@@ -38,17 +38,17 @@ void print_buzz(void)
 }
 
 /**
- * fizz_buzz - prints numbers, Fizz, Buzz and FizzBuzz
+ * main - prints numbers, Fizz, Buzz and FizzBuzz
  *
  * Description: prints Fizz for multiples of 3,
  * Buzz for multiple of 5 and FizBuzz for both
+ *
+ * Return: 0
  */
 
-void fizz_buzz(void)
+int  main(void)
 {
 	int j;
-	char fizz[4] = "Fizz";
-	char buzz[4] = "Buzz";
 
 	for (j = 1; j <= 100; j++)
 	{
@@ -68,19 +68,5 @@ void fizz_buzz(void)
 			printf("%d ", j);
 	}
 	putchar('\n');
-}
-
-/**
- * main - calls function fizz_buzz
- *
- * Description: checks fizz_buzz code
- *
- * Return: type of int
- */
-
-int main(void)
-{
-	fizz_buzz();
 	return (0);
 }
-
