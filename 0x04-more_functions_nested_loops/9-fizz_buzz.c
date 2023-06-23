@@ -13,8 +13,8 @@ void print_fizz(void)
 
 	while (fizz[k] != '\0')
 	{
-	       	printf("%c", fizz[k]);
-	       	k++;
+		printf("%c", fizz[k]);
+		k++;
 	}
 }
 
@@ -30,7 +30,7 @@ void print_buzz(void)
 	char buzz[4] = "Buzz";
 
 	while (buzz[k] != '\0')
-	{ 
+	{
 		printf("%c", buzz[k]);
 		k++;
 	}
