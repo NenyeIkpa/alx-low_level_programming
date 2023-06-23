@@ -33,12 +33,11 @@ void print_buzz(void)
 	{
 		printf("%c", buzz[k]);
 		k++;
-	}
-	putchar(' ');
+	};
 }
 
 /**
- * main - prints numbers, Fizz, Buzz and FizzBuzz
+ * fizz_buzz - prints numbers, Fizz, Buzz and FizzBuzz
  *
  * Description: prints Fizz for multiples of 3,
  * Buzz for multiple of 5 and FizBuzz for both
@@ -46,7 +45,7 @@ void print_buzz(void)
  * Return: 0
  */
 
-int  main(void)
+void fizz_buzz(void)
 {
 	int j;
 
@@ -56,6 +55,8 @@ int  main(void)
 		{
 			print_fizz();
 			print_buzz();
+			if (j < 99)
+				putchar(' ');
 		}
 		else if (j % 3 == 0)
 		{
@@ -63,10 +64,28 @@ int  main(void)
 			putchar(' ');
 		}
 		else if (j % 5 == 0)
+		{
 			print_buzz();
+			if (j < 100)
+				putchar(' ');
+		}
 		else
 			printf("%d ", j);
 	}
 	putchar('\n');
+}
+
+/**
+ * main - checks fizz_buzz
+ *
+ * Description: calls fizz_buzz function to
+ * perform its task
+ *
+ * Return: 0
+ */
+
+int main(void)
+{
+	fizz_buzz();
 	return (0);
 }
