@@ -3,7 +3,7 @@
  *
  * Description: updates the value of its parameter, a pointer,
  * to 98.
- * @*n - points to type int
+ * @n: a pointer of type int
  *
  * Return: returns nothing
  */
