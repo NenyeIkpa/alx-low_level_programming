@@ -11,9 +11,9 @@
 int _strcmp(char *s1, char *s2)
 {
 	int i, result;
-	s1_length = strlen(s1);
-	s2_length = strlen(s2);
-	length = s1_length <= s2_length ? s1_length : s2_length;
+	int s1_length = strlen(s1);
+	int s2_length = strlen(s2);
+	int length = s1_length <= s2_length ? s1_length : s2_length;
 
 	for (i = 0; i < length; i++)
 	{
@@ -27,6 +27,13 @@ int _strcmp(char *s1, char *s2)
 				result = 15;
 			break;
 		}
+	}
+	if (result == 0 && s1_length != s2_length)
+	{
+		if (s1_length < s2_length)
+			result = -15;
+		else
+			result = 15;
 	}
 	return (result);
 }
