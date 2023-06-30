@@ -20,12 +20,15 @@ char *cap_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0, k = 0; j < 26; j++, k++)
+		for (j = 0; j < 13; j++)
 		{
-			if (str[0] == lower[j])
-				str[0] = upper[j];
-			if (str[i - 1] == special_xters[k] && str[i] == lower[j])
-				str[i] = upper[j];
+			for (k = 0; k < 26; k++)
+			{
+				if (str[0] == lower[k])
+					str[0] = upper[k];
+				if (str[i - 1] == special_xters[j] && str[i] == lower[k])
+				str[i] = upper[k];
+			}
 		}
 	}
 	return (str);
