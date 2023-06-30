@@ -9,7 +9,7 @@
 char *cap_string(char *str)
 {
 	int i, j, k;
-	int special_xters[13] = {' ', '\t', '\n', ',', ';',
+	int special_xters[26] = {' ', '\t', '\n', ',', ';',
 		'.', '!', '?', '"', '(', ')', '{', '}'};
 	char lower[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
 		'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
@@ -20,7 +20,7 @@ char *cap_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0, k = 0; j < 26 || k < 13; j++, k++)
+		for (j = 0, k = 0; j < 26; j++, k++)
 		{
 			if (str[0] == lower[j])
 				str[0] = upper[j];
