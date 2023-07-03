@@ -1,35 +1,34 @@
-#include <string.h>
-
 /**
- *  _strspn - gets the length of a prefix substring
+ * _strspn - gets the length of a prefix substring
  *
- *  @s: given string
- *  @accept: prefix substring
+ * @s: given string
+ * @accept: given substring
  *
- *  Return: unsigned int
+ * Return: unsigned int
  */
 
-int _strspn(char *s, char *accept)
+unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, first_idx, last_idx, accept_length, final;
+	char *a;
+	unsigned int count = 0;
+	int isAcceptable;
 
-	accept_length = strlen(accept);
-	for (i = 0; i < accept_length; i++)
+	while (*s)
 	{
-		for (j = 0; s[j] != '\0'; j++)
-		{
-			if (accept[0] == s[j])
-				first_idx = j;
-			else if (accept[accept_length - 1] == s[j])
-			{
-				last_idx = j;
-			}
-		};
-	}
+		isAcceptable = 0;
 
-	if (first_idx > last_idx)
-		final = first_idx - last_idx;
-	else
-		final = last_idx - first_idx;
-	return (final);
+		for (a = accept; *a; a++)
+		{
+			if (*s == *a)
+			{
+				isAcceptable = 1;
+				break;
+			}
+		}
+		if (!isAcceptable)
+			break;
+		count++;
+		s++;
+	}
+	return (count);
 }
