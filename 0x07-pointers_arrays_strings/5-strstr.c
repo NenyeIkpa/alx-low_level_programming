@@ -20,7 +20,7 @@ char *_strstr(char *haystack, char *needle)
 		isFound = 0;
 		for (j = 0; *(haystack + j) != '\0'; j++)
 		{
-			if (*(haystack + j) == *needle && count == 0)
+			if (*(haystack + j) == *needle || count == 0)
 				idx = j;
 			if (*(haystack + j) == *(needle + i))
 			{
