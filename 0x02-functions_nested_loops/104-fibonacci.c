@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main -entry point
+ * printFibonacci - prints first 'count' of fibonacci numbers
  *
- * Desciption: prints first 98 fibonacci numbers
+ * @count: given int
  *
  * Return: type of int
  */
@@ -12,7 +12,7 @@ void printFibonacci(int count)
 {
 	unsigned long int first = 1, second = 2, next;
 	int i;
-	
+
 	printf("%lu, %lu, ", first, second);
 	for (i = 3; i <= count; i++)
 	{
@@ -25,6 +25,12 @@ void printFibonacci(int count)
 	}
 	printf("\n");
 }
+
+/**
+ * main - entry point
+ *
+ * Return: int
+ */
 
 int main(void)
 {
