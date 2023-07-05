@@ -1,15 +1,11 @@
 #include "main.h"
-
+void print_times_table(int n);
 /**
  * print_times_table - print times table n times
- *
- * Description: print multipliation table
- * n times based on input n
+ * Description: print multipliation table n times based on input n
  * @n: input of type int
- *
  * Return: type of int
  */
-
 void print_times_table(int n)
 {
 	int i = 0, j, result, c, d, e;
@@ -36,9 +32,7 @@ void print_times_table(int n)
 				if ((c != 0 && d != 0) || (c > 0 && d == 0))
 				{
 					if (result < 100)
-					{
 						_putchar(' ');
-					}
 					_putchar('0' + c);
 					_putchar(d + '0');
 					if (result > 99)
@@ -47,9 +41,7 @@ void print_times_table(int n)
 				else
 				{
 					if (j == 0)
-					{
 						_putchar(d + '0');
-					}
 					else
 					{
 						_putchar(' ');
