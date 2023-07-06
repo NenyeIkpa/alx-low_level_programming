@@ -11,14 +11,16 @@
 int _sqrt(int n, int head, int tail)
 {
 	int mid;
+	long int num = n, mid_sq;
 
 	if (head > tail)
 		return (-1);
 	mid = head + (tail - head) / 2;
+	mid_sq = mid * mid;
 
-	if (mid * mid == n)
+	if (mid_sq == num)
 		return (mid);
-	else if (mid * mid > n)
+	else if (mid_sq > num)
 		return (_sqrt(n, head, mid - 1));
 	else
 		return (_sqrt(n, mid + 1, tail));
