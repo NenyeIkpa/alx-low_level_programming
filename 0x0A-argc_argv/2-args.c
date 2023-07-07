@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - entry point. prints name of program
+ * main - entry point. prints all arguments passed
  *
- * @argc: argument count*
+ * @argc: arg count
  * @argv: string array of arguments
  *
  * Return: int
@@ -11,7 +11,9 @@
 
 int main(int argc, char *argv[])
 {
-	printf("%s\n", argv[argc - 1]);
+	int i;
 
+	for (i  = 0; i < argc; i++)
+		printf("%s\n", argv[i]);
 	return (0);
 }
