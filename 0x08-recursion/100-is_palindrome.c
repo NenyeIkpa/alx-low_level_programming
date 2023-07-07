@@ -13,7 +13,7 @@
 int is_palindrome_recursive(char *s, int head, int tail)
 {
 	if (head > tail)
-		return(1);
+		return (1);
 	if (s[head] == s[tail])
 		return (is_palindrome_recursive(s, head + 1, tail - 1));
 	return (0);
