@@ -6,7 +6,7 @@
  *
  * @value: given number
  *
- * @Return: int
+ * Return: int
  */
 
 int get_divisor(int value)
