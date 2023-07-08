@@ -21,7 +21,7 @@ int get_divisor(int value)
 		divisor = 5;
 	if (value >= 2 && value <= 4)
 		divisor = 2;
-	if (value > 0 && value < 2)
+	if (value == 1)
 		divisor = 1;
 	return (divisor);
 }
