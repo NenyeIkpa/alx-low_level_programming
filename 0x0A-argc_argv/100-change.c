@@ -13,6 +13,8 @@
 
 int get_change(int value, int cc)
 {
+	if (value < 0)
+		return (1);
 	if (value == 1)
 	{
 		cc++;
@@ -60,7 +62,7 @@ int get_change(int value, int cc)
 
 int main(int argc, char *argv[])
 {
-	if (argc < 2 || atoi(argv[1]))
+	if (argc < 2)
 	{
 		printf("Error\n");
 		return (1);
