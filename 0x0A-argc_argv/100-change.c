@@ -14,7 +14,7 @@
 int get_change(int value, int cc)
 {
 	if (value < 0)
-		return (1);
+		return (0);
 	if (value == 1)
 	{
 		cc++;
