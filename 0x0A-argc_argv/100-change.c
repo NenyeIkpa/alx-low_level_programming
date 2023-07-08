@@ -37,8 +37,6 @@ int get_divisor(int value)
 
 int get_change(int value, int cc, int divisor)
 {
-	if (value < 0)
-		return (0);
 	if (value == 1)
 	{
 		cc++;
@@ -70,6 +68,8 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	value = atoi(argv[1]);
+	if (value < 0)
+		printf("%d\n", 0);
 	printf("%d\n", get_change(value, 0, get_divisor(value)));
 	return (0);
 }
