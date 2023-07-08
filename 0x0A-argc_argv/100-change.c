@@ -47,7 +47,7 @@ int get_change(int value, int cc, int divisor)
 	cc = cc + value / divisor;
 	if (value / divisor == 0)
 		return (cc);
-	value = value % 2;
+	value = value % divisor;
 	return (get_change(value, cc, get_divisor(value)));
 }
 
