@@ -17,28 +17,44 @@ int get_change(int value, int cc)
 	if (value == 1)
 	{
 		cc++;
-		printf("%d\n", cc);
-		return (0);
+		return (cc);
 	}
 	if (value >= 2 && value < 5)
 	{
 		cc = cc + value / 2;
-		value = value % 2;
-		return (get_change(value, cc));
+		if (value / 2 == 0)
+			return (cc);
+		else
+		{
+			value = value % 2;
+			return (get_change(value, cc));
+		}
 	}
 	if (value >= 5 && value < 10)
 	{
 		cc = cc + value / 5;
-		value = value % 5;
-		return (get_change(value, cc));
+		if (value / 5 == 0)
+			return (cc);
+		else
+		{
+			value = value % 5;
+			return (get_change(value, cc));
+		}
 	}
 	if (value >= 10 && value < 25)
 	{
 		cc = cc + value / 10;
-		value = value % 10;
-		return (get_change(value, cc));
+		if (value / 10 == 0)
+			return (cc);
+		else
+		{
+			value = value % 10;
+			return (get_change(value, cc));
+		}
 	}
 	cc = cc + value / 25;
+	if (value / 25 == 0)
+		return (cc);
 	value = value % 25;
 	return (get_change(value, cc));
 }
@@ -59,5 +75,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	return (get_change(atoi(argv[1]), 0));
+	printf("%d\n", get_change(atoi(argv[1]), 0));
+	return (0);
 }
