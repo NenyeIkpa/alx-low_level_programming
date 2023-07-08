@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	}
 	value = atoi(argv[1]);
 	if (value < 0)
-		printf("%d\n", 0);
+		return(printf("%d\n", 0));
 	printf("%d\n", get_change(value, 0, get_divisor(value)));
 	return (0);
 }
