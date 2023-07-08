@@ -14,7 +14,7 @@ int get_divisor(int value)
 	int divisor;
 
 	if (value > 24)
-		divisor = 24;
+		divisor = 25;
 	if (value >= 10 && value <= 24)
 		divisor = 10;
 	if (value >= 5 && value <= 9)
