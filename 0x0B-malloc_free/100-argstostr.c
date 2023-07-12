@@ -10,7 +10,7 @@
 char *argstostr(int ac, char **av)
 {
 	char *new_str;
-	int i;
+	int i, j;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -18,6 +18,9 @@ char *argstostr(int ac, char **av)
 	if (new_str == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
-		*(new_str + i) = **(av + i);
+	{
+		for (j = 0; j < ac; j++)
+			new_str[i] = *(*(av + i ) + j);
+	}
 	return (new_str);
 }
