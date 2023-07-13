@@ -4,7 +4,7 @@
 /**
  * string_nconcat - concatenates two strings
  *
- * @s1: destination string 
+ * @s1: destination string
  * @s2: source string
  * @n: number of bytes
  *
@@ -22,8 +22,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	s1_length = strlen(s1);
 	s2_length = strlen(s2);
-	copy_length  = n > s2_length ? s2_length + 1 : n;
-	ptr = malloc(sizeof(char) * (s1_length + copy_length));
+	copy_length  = n > s2_length ? s2_length : n;
+	ptr = malloc(sizeof(char) * (s1_length + copy_length + 1));
 	if (ptr == NULL)
 		return (NULL);
 	memcpy(ptr, s1, s1_length);
