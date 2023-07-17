@@ -2,6 +2,8 @@
 
 /**
  * main - prints name of file
+ *
+ * Return: int
  */
 
 int main(void)
