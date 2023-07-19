@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "3-calc.h"
 
 /**
  * main - entry point
@@ -13,7 +14,6 @@
 int main(int argc, char *argv[])
 {
 	int result;
-	int (*get_op_func(char *s))(int, int);
 	int (*op_func)(int, int);
 
 	if (argc != 4)
