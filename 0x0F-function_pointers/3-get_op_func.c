@@ -41,10 +41,9 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 5)
 	{
-		if (s == ops[i].op)
+		if (*s == *ops[i].op)
 			return (ops[i].f);
 		i++;
 	}
-	printf("Error\n");
-	exit(99);
+	return (NULL);
 }
