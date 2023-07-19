@@ -43,6 +43,7 @@ int (*get_op_func(char *s))(int, int)
 	{
 		if (s == ops[i].op)
 			return (ops[i].f);
+		i++;
 	}
 	printf("Error\n");
 	exit(99);
