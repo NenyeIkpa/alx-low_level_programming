@@ -5,47 +5,47 @@
 /**
  * put_c - prints char
  *
- * @ptr: arg pointer
+ * @arg_ptrs: list of arg pointers
  */
 
-void put_c(va_list ptr)
+void put_c(va_list arg_ptrs)
 {
-	printf("%c", va_arg(ptr, int));
+	printf("%c", va_arg(arg_ptrs, int));
 }
 
 /**
  * put_i - prints integer
  *
- * @ptr: arg pointer
+ * @arg_ptrs: list of arg pointers
  */
 
-void put_i(va_list ptr)
+void put_i(va_list arg_ptrs)
 {
-	printf("%d", va_arg(ptr, int));
+	printf("%d", va_arg(arg_ptrs, int));
 }
 
 /**
- * put_f
+ * put_f - prints float
  *
- * @ptr: arg pointer
+ * @arg_ptrs: list of arg pointers
  */
 
-void put_f(va_list ptr)
+void put_f(va_list arg_ptrs)
 {
-	printf("%f", va_arg(ptr, double));
+	printf("%f", va_arg(arg_ptrs, double));
 }
 
 /**
  * put_s - prints string
  *
- * @ptr: arg pointer
+ * @arg_ptrs: list of arg pointers
  */
 
-void put_s(va_list ptr)
+void put_s(va_list arg_ptrs)
 {
 	char *str;
 
-	str = va_arg(ptr, char*);
+	str = va_arg(arg_ptrs, char*);
 	if (str == NULL)
 		printf("(nil)");
 	printf("%s", str);
@@ -78,7 +78,7 @@ void print_all(const char * const format, ...)
 	{
 		while (options[j].symbol)
 		{
-			if(*options[j].symbol == format[i])
+			if (*options[j].symbol == format[i])
 			{
 				printf("%s", separator);
 				options[j].option(arg_list);
