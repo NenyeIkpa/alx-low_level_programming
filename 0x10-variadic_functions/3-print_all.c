@@ -28,6 +28,7 @@ void print_all(const char * const format, ...)
 			printf("(nil)");
 		else
 			printf("%s", va_arg(arg_list, char *));
+		i++;
 	}
 	putchar('\n');
 	va_end(arg_list);
