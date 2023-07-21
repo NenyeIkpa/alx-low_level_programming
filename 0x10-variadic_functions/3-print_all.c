@@ -47,7 +47,10 @@ void put_s(va_list arg_ptrs)
 
 	str = va_arg(arg_ptrs, char*);
 	if (str == NULL)
+	{
 		printf("(nil)");
+		return;
+	}
 	printf("%s", str);
 }
 
