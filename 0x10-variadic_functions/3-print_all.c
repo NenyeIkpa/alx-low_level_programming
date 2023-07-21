@@ -1,6 +1,55 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include <string.h>
+#include "variadic_functions.h"
+
+/**
+ * put_c - prints char
+ *
+ * @ptr: arg pointer
+ */
+
+void put_c(va_list ptr)
+{
+	printf("%c", va_arg(ptr, int));
+}
+
+/**
+ * put_i - prints integer
+ *
+ * @ptr: arg pointer
+ */
+
+void put_i(va_list ptr)
+{
+	printf("%d", va_arg(ptr, int));
+}
+
+/**
+ * put_f
+ *
+ * @ptr: arg pointer
+ */
+
+void put_f(va_list ptr)
+{
+	printf("%f", va_arg(ptr, double));
+}
+
+/**
+ * put_s - prints string
+ *
+ * @ptr: arg pointer
+ */
+
+void put_s(va_list ptr)
+{
+	char *str;
+
+	str = va_arg(ptr, char*);
+	if (str == NULL)
+		printf("(nil)");
+	printf("%s", str);
+}
 
 /**
  * print_all - prints anything
@@ -13,41 +62,33 @@
 
 void print_all(const char * const format, ...)
 {
+	print_op options[] = {
+		{"c", put_c},
+		{"i", put_i},
+		{"f", put_f},
+		{"s", put_s},
+		{NULL, NULL}
+	};
 	va_list arg_list;
-	int i = 0;
-	char x;
-	char chr;
-	int num;
-	float fl;
-	char * str;
+	char *separator =  "";
+	int i = 0, j = 0;
 
 	va_start(arg_list, format);
-	while ((x = format[i++]) != 0)
+	while (format && format[i])
 	{
-		if (x == 'c')
+		while (options[j].symbol)
 		{
-			chr = va_arg(arg_list, int);
-		       printf("%c ", chr);
+			if(*options[j].symbol == format[i])
+			{
+				printf("%s", separator);
+				options[j].option(arg_list);
+				separator = ", ";
+			}
+			++j;
 		}
-		else if (x == 'i')
-		{
-			num = va_arg(arg_list, int);
-			printf("%d ", num);
-		}
-		else if (x == 'f')
-		{
-			fl = va_arg(arg_list, double);
-			printf("%f ", fl);
-		}
-		else if (x == 's')
-		{
-			str = va_arg(arg_list, char *);
-			if (str == NULL)
-				printf("(nil)");
-			else
-				printf("%s ", str);
-		}
+		j = 0;
+		++i;
 	}
-	putchar('\n');
+	printf("\n");
 	va_end(arg_list);
 }
