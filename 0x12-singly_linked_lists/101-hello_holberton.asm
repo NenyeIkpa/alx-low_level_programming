@@ -1,17 +1,14 @@
 ; Writes "Hello, Holberton" to the console using only system calls. Runs on 64-bit macOS only.
 ; To assemble and run: nasm -fmacho64 hello.asm && ld hello.o && ./a.out
 
-  global    _start
+
+   global    main
+          extern    puts
 
           section   .text
-_start:   mov       rax, 1                  ; system call for write
-          mov       rdi, 1                  ; file handle 1 is stdout
-          mov       rsi, message            ; address of string to output
-          mov       rdx, 13                 ; number of bytes
-          syscall                           ; invoke operating system to do the write
-          mov       rax, 60                 ; system call for exit
-          xor       rdi, rdi                ; exit code 0
-          syscall                           ; invoke operating system to exit
-
-          section   .data
-message:  db        "Hello, Holberton", 10      ; note the newline at the end
+main:                                       ; This is called by the C library startup code
+          mov       rdi, message            ; First integer (or pointer) argument in rdi
+          call      puts                    ; puts(message)
+          ret                               ; Return from main back into C library wrapper
+message:
+          db        "Hello, Holberton", 0        ; Note strings must be terminated with 0 in C
