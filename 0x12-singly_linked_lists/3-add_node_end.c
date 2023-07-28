@@ -4,7 +4,7 @@
  * add_node_end - adds a node at the end of a list
  *
  * @head: head of list
- * @char: element to be added to list
+ * @str: element to be added to list
  *
  * Return: address of the new element
  */
@@ -23,7 +23,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		curr = *head;
-		while(curr != NULL)
+		while (curr != NULL)
 		{
 			prev = curr;
 			curr = curr->next;
