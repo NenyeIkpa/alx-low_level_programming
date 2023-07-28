@@ -4,14 +4,17 @@
           global    start
 
           section   .text
-start:    mov       rax, 0x02000004         ; system call for write
-          mov       rdi, 1                  ; file handle 1 is stdout
-          mov       rsi, message            ; address of string to output
-          mov       rdx, 13                 ; number of bytes
-          syscall                           ; invoke operating system to do the write
-          mov       rax, 0x02000001         ; system call for exit
-          xor       rdi, rdi                ; exit code 0
-          syscall                           ; invoke operating system to exit
+_start:
+  mov rax, 1        ; write(
+  mov rdi, 1        ;   STDOUT_FILENO,
+  mov rsi, msg      ;   "Hello, Holberton!\n",
+  mov rdx, msglen   ;   sizeof("Hello, Holberton!\n")
+  syscall           ; );
 
-          section   .data
-message:  db        "Hello, Holberton", 14      ; note the newline at the end
+  mov rax, 60       ; exit(
+  mov rdi, 0        ;   EXIT_SUCCESS
+  syscall           ; );
+
+section .rodata
+  msg: db "Hello, Holberton!", 10
+  msglen: equ $ - msg
