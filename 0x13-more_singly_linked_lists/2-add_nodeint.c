@@ -5,6 +5,7 @@
  * of a list
  *
  * @head: pointer that points ot the head pointer of a list
+ * @n: int to be placed in new node
  *
  * Return: linked list of type listint_t
  */
