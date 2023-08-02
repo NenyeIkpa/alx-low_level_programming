@@ -7,7 +7,7 @@
  * @idx: index to insert node
  * @n: value to be assigned to n of new node
  *
- * Return: given list with new node inserted
+ * Return: address of new_node
  *
  */
 
@@ -43,5 +43,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	if (curr == NULL && i < idx)
 		free(new_node);
+	free(prev);
+	free(curr);
 	return (NULL);
 }
