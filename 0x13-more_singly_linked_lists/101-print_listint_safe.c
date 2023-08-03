@@ -60,20 +60,15 @@ size_t print_listint_safe(const listint_t *head)
 	loop = loop_in_list(head);
 	if (loop == head)
 	{
-		if (head->next == NULL)
+		while (head->next != NULL)
 		{
-
 			printf("[%p] %d\n", (void *)head, head->n);
-			printf("-> [%p] %d\n", (void *)head, head->n);
-			return (1);
-		}
-		else
-		{
-			 printf("[%p] %d\n", (void *)head, head->n);
-			 head = head->next;
+			count++;
+			head = head->next;
 		}
 		printf("[%p] %d\n", (void *)head, head->n);
 		printf("->[%p] %d\n", (void *)loop, loop->n);
+		return (count++);
 	}
 
 	while (head != NULL)
