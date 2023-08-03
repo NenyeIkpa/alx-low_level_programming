@@ -14,6 +14,8 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int num = 0, product;
 	int i, digit, pow = 0, str_len;
 
+	if (b == NULL)
+		return (0);
 	str_len = strlen(b);
 	for (i = 0; i < str_len; i++)
 	{
