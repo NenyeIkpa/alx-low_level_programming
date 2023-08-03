@@ -10,18 +10,29 @@
 
 listint_t *find_listint_loop(listint_t *head)
 {
-	const listint_t *loop;
+	const listint_t *tortoise, *hare;
 
-	loop = loop_in_list(head);
-	if (head == loop)
-		return (head);
-	while (head != NULL)
+	if (head == NULL)
+		return (NULL);
+	tortoise = head;
+	hare = head;
+	while (hare != NULL && hare->next != NULL)
 	{
-		if (head->next == loop)
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (hare == tortoise)
 		{
-			return ((void *)head->next);
+			tortoise = head;
+			while (tortoise != hare)
+			{
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+			tortoise = head;
+			while (tortoise->next != hare)
+				tortoise = tortoise->next;
+			return (tortoise->next);
 		}
-		head = head->next;
 	}
 	return (NULL);
 }
