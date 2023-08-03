@@ -17,8 +17,6 @@ const listint_t *loop_in_list(const listint_t *head)
 {
 	const listint_t *tortoise, *hare, *loop_in_list;
 
-	if (head == NULL)
-		exit(98);
 	tortoise = head;
 	hare = head;
 	while (hare != NULL && hare->next != NULL)
@@ -57,6 +55,8 @@ size_t print_listint_safe(const listint_t *head)
 	int loop_reached  = 0;
 	const listint_t *loop;
 
+	if (head == NULL)
+		exit(98);
 	loop = loop_in_list(head);
 	while (head != NULL)
 	{
