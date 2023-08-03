@@ -5,7 +5,8 @@
  *
  * @head: head pointer of list
  *
- * Return: address of the node where the loop starts, or NULL if there is no loop
+ * Return: address of the node where the loop starts,
+ * or NULL if there is no loop
  */
 
 listint_t *find_listint_loop(listint_t *head)
