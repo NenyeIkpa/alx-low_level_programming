@@ -6,10 +6,10 @@
  * @n: unsigned long int
  * @index: index of bit to return
  *
- *Description: check if index is within valid range of
- unsigned long int. Create a bitmask with only the bit
- at given index set to 1. check if bit at index is set to 1 or 0.
- * *
+ * Description: check if index is within valid range of
+ * unsigned long int. Create a bitmask with only the bit
+ * at given index set to 1. check if bit at index is set to 1 or 0.
+ *
  * Return: 1, 0 or -1
  */
 
