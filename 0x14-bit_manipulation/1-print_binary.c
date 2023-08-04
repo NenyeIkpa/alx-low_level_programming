@@ -22,6 +22,9 @@ void print_binary(unsigned long int n)
 	for (i = num_in_bits - 1; i >= 0; i--)
 	{
 		bitmask = 1UL << i;
-		_putchar((n & bitmask) ? '1' : '0');
+		if (n & bitmask)
+			_putchar('1');
+		else
+			_putchar('0');
 	}
 }
