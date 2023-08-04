@@ -16,15 +16,10 @@
 void print_binary(unsigned long int n)
 {
 	int num_in_bits, i;
-	unsigned long int bitmask;
 
-	num_in_bits = sizeof(n) * 8;
-	for (i = num_in_bits - 1; i >= 0; i--)
+	num_in_bits = sizeof(n) * 2;
+	for (i = num_in_bits - 1; i >= 0 ; i--)
 	{
-		bitmask = 1UL << i;
-		if (n & bitmask)
-			_putchar('1');
-		else
-			_putchar('0');
+		(n >> i) & 1 ? _putchar('1') : _putchar('0');
 	}
 }
