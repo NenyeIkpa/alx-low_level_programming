@@ -18,7 +18,8 @@ int create_file(const char *filename, char *text_content)
 	fildes = open(filename, O_WRONLY | O_TRUNC | O_CREAT, 0600);
 	if (fildes == -1)
 		return (-1);
-	bytes_written = write(fildes, text_content, (strlen(text_content) + 1));
+	if (text_content != NULL)
+		bytes_written = write(fildes, text_content, strlen(text_content));
 	if (bytes_written == -1)
 		return (-1);
 	close(fildes);
