@@ -28,7 +28,7 @@ int main(int ac, char *av[])
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fd_dest = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fd_dest = open(av[2], O_RDWR | O_TRUNC | O_CREAT, 0664);
 	bytes_written = write(fd_dest, buffer, bytes_read);
 	if (fd_dest == -1 || bytes_written == -1 || bytes_written != bytes_read)
 	{
