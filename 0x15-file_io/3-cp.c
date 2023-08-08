@@ -59,7 +59,7 @@ int main(int ac, char *av[])
 		if (bytes_written == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
-			return (99);
+			exit (99);
 		}
 	}
 	if (bytes_read == -1)
