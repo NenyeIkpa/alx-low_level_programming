@@ -40,7 +40,6 @@ int main(int ac, char *av[])
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	buffer = malloc(sizeof(char) * 1024);
 	fd_src = open(av[1], O_RDONLY);
 	bytes_read = read(fd_src, buffer, 1024);
 	fd_dest = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
