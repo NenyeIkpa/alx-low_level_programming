@@ -32,13 +32,19 @@ void close_file(int file)
 int main(int ac, char *av[])
 {
 	int fd_src, fd_dest;
-	char buffer[1024];
+	char *buffer;
 	int bytes_read, bytes_written;
 
 	if (ac != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
+	}
+	buffer = malloc(sizeof(char) * 1024);
+	if (buffer == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
+		return (99);
 	}
 	fd_src = open(av[1], O_RDONLY);
 	bytes_read = read(fd_src, buffer, 1024);
