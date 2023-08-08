@@ -32,7 +32,7 @@ void close_file(int file)
 int main(int ac, char *av[])
 {
 	int fd_src, fd_dest;
-	char *buffer;
+	char buffer[1024];
 	int bytes_read, bytes_written;
 
 	if (ac != 3)
@@ -41,11 +41,6 @@ int main(int ac, char *av[])
 		exit(97);
 	}
 	buffer = malloc(sizeof(char) * 1024);
-	if (buffer == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
-		exit(99);
-	}
 	fd_src = open(av[1], O_RDONLY);
 	bytes_read = read(fd_src, buffer, 1024);
 	fd_dest = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -53,20 +48,17 @@ int main(int ac, char *av[])
 		if (fd_src == -1 || bytes_read == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-			free(buffer);
 			exit(98);
 		}
 		bytes_written = write(fd_dest, buffer, bytes_read);
-		if (fd_dest == -1 || bytes_written == -1 || bytes_written != bytes_read)
+		if (fd_dest == -1 || bytes_written == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
-			free(buffer);
 			return (99);
 		}
 		bytes_read = read(fd_src, buffer, 1024);
 		fd_dest = open(av[2], O_WRONLY | O_APPEND);
 	} while (bytes_read > 0);
-	free(buffer);
 	close_file(fd_src);
 	close_file(fd_dest);
 	return (0);
