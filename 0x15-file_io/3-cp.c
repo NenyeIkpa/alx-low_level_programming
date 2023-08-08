@@ -42,7 +42,7 @@ int main(int ac, char *av[])
 	}
 	fd_src = open(av[1], O_RDONLY);
 	bytes_read = read(fd_src, buffer, 1024);
-	fd_dest = open(av[2], O_RDWR | O_TRUNC | O_CREAT, 0664);
+	fd_dest = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	do {
 		if (fd_src == -1 || bytes_read == -1)
 		{
