@@ -37,7 +37,7 @@ int main(int ac, char *av[])
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fd_src = open(av[1], O_RDONLY);
@@ -50,7 +50,7 @@ int main(int ac, char *av[])
 			exit(98);
 		}
 		bytes_written = write(fd_dest, buffer, bytes_read);
-		if (fd_dest == -1 || bytes_written == -1)
+		if (fd_dest == -1 || bytes_written == -1 || bytes_written != bytes_read)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
 			return (99);
