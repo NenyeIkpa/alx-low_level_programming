@@ -41,8 +41,7 @@ int main(int ac, char *av[])
 		exit(97);
 	}
 	fd_src = open(av[1], O_RDONLY);
-	bytes_read = read(fd_src, buffer, 1024);
-	fd_dest = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);{
+	fd_dest = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_src == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
@@ -59,7 +58,7 @@ int main(int ac, char *av[])
 		if (bytes_written == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]);
-			exit (99);
+			exit(99);
 		}
 	}
 	if (bytes_read == -1)
