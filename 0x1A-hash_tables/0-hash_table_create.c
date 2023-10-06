@@ -22,17 +22,16 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (hash_table == NULL)
 		return (NULL);
 	/*
-	 * Allocate memory for the hash_node struct required for the
-	 * given array size
+	 * Allocate memory for the pointer to the hash_node struct
+	 * required for the given array size
 	 */
-	hash_table->array = malloc(sizeof(hash_node_t) * size);
+	hash_table->array = malloc(sizeof(hash_node_t **) * size);
 	if (hash_table->array == NULL)
 	{
 		free(hash_table);
 		return (NULL);
 	}
 
-	hash_table->size = size;
 	/*
 	 * initialize each array index to NULL
 	 */
@@ -40,5 +39,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		hash_table->array[i] = NULL;
 	}
+	hash_table->size = size;
 	return (hash_table);
 }
