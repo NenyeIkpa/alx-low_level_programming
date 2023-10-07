@@ -15,7 +15,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int hashcode;
 	hash_node_t *node, *temp;
 
-	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
+	if (ht == NULL || ht->array == NULL || key == NULL || strcmp(key, "") == 0
+			|| ht->size  == 0 || strlen(key) == 0 || value == NULL)
 		return (0);
 	hashcode = key_index((const unsigned char *)key, ht->size);
 	temp = ht->array[hashcode];
@@ -41,7 +42,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(node);
 		return (0);
 	}
-	node->key = (char *)key;
 	node->next = NULL;
 	if (ht->array[hashcode] == NULL)
 		ht->array[hashcode] = node;
