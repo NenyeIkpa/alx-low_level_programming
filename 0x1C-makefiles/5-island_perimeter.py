@@ -6,6 +6,15 @@
 def island_perimeter(grid):
     """ 
         calculates the perimeter of given grid
+
+        assumed_perimeter: for all squares with 1, add 4
+        since distance round the square(perimeter) equals 4
+
+        connections: check if any square wirh 1 is connected to another
+        square with 1. To avoid repetitve counts, check top and left of each
+        square with 1.
+
+        perimeter: assumed_perimeter - connections
     """
     if not grid or not grid[0]:
         return 0
