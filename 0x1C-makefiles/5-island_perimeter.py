@@ -5,7 +5,7 @@
 
 
 def island_perimeter(grid):
-    """ 
+    """
         calculates the perimeter of given grid
 
         assumed_perimeter: for all squares with 1, add 4
@@ -24,7 +24,7 @@ def island_perimeter(grid):
     connections = 0
     rows = len(grid)
     cols = len(grid[0])
-    
+
     for i in range(rows):
         for j in range(cols):
             if grid[i][j] == 1:
