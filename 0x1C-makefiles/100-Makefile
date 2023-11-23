@@ -4,11 +4,12 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
+COMPILER = $(CC) $(CFLAGS)
 
 .PHONY: all clean oclean fclean re
 
 all: ${OBJ} m.h
-	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+	${COMPILER} ${OBJ} -o ${NAME}
 
 clean:
 	${RM} *~  $(NAME)
