@@ -10,8 +10,8 @@ def island_perimeter(grid):
     
     if not grid:
         return 0
-    for row in range(len(grid) - 1):
-            for col in range(len(grid[row]) - 1):
+    for row in range(1, len(grid) - 1):
+            for col in range(1, len(grid[row]) - 1):
                 if grid[row][col] == 1:
                     if grid[row][col - 1] == 0:
                         y += 1
